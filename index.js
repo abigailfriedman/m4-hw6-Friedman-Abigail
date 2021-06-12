@@ -38,13 +38,13 @@ function getPizzaOrder() {
 pizza.toppings = toppings
 
 if (toppings){
-pizzaToppingsLength = toppings.split(",").length
-pizza.cost = pizzaToppingsLength * toppingsFee + pizza.toppings
+ var pizzaToppingsLength = toppings.split(",").length
+pizza.cost += pizzaToppingsLength * toppingsFee 
   }
 
 else {
 pizza.toppings = [];
-};
+}
 
 
 var extraCheese = confirm("Would you like extra cheese?")
