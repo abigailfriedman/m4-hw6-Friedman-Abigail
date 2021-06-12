@@ -10,18 +10,22 @@ function getPizzaOrder() {
   alert("Hi, Thanks for ordering with Web to Pizza!")
   var pizza = {
     // set the 'cost' property to the basePrice
-    // YOUR CODE HERE
+    cost: basePrice
   }
 
   var crust = prompt(
     `Please enter the type of crust (${formatPrice(thickCrustUpcharge)} upcharge for Thick crust)`
   )
   // set the pizza object's 'crust' property to the user's response
+  pizza.crust = crust
   // HINT: prompt() returns a string
   // HINT: You may wish to use .toLowerCase() and .trim()
   // if the user specified 'thick' crust, add thickCrustUpcharge
   // to pizza.cost
   // YOUR CODE HERE
+  if (crust.toLowerCase().trim() === 'thick') {
+    pizza.cost += thickCrustUpcharge
+  }
 
   var toppings = prompt("Please enter additional toppings (comma separated)")
   // HINT: prompt() will return an empty string "" if the user presses 'OK' without entering a value
@@ -31,11 +35,30 @@ function getPizzaOrder() {
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
 
-  var extraCheese = confirm("Would you like extra cheese?")
+pizza.toppings = toppings
+
+if (toppings){
+pizzaToppingsLength = toppings.split(",").length
+pizza.cost = pizzaToppingsLength * toppingsFee + pizza.toppings
+  }
+
+else {
+pizza.toppings = [];
+};
+
+
+var extraCheese = confirm("Would you like extra cheese?")
+
   // HINT: confirm() returns a boolean
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
   // YOUR CODE HERE
+  if(extraCheese === true) {
+    pizza.extraCheese == true 
+    pizza.cost += extraCheeseUpcharge
+  }
+  
+
 
   var isDelivery = confirm("Is your order for Delivery?")
   // HINT: confirm() returns a boolean
@@ -43,6 +66,15 @@ function getPizzaOrder() {
   // if order is NOT for delivery, set pizza.saleType to "take-out"
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
+
+  if (isDelivery = true) {
+    pizza.saleType = "delivery"
+    pizza.cost += deliveryFee
+  }
+
+  if (isDelivery = false) {
+    pizza.saleType = "take-out"
+  }
 
   return pizza
 }
