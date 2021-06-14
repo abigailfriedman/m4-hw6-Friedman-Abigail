@@ -35,10 +35,11 @@ function getPizzaOrder() {
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
 
-pizza.toppings = toppings
+//pizza.toppings = toppings
 
 if (toppings){
- var pizzaToppingsLength = toppings.split(",").length
+ pizza.toppings = toppings.split(",")
+var pizzaToppingsLength = pizzatoppings.length
 pizza.cost += pizzaToppingsLength * toppingsFee 
   }
 
@@ -67,7 +68,7 @@ var extraCheese = confirm("Would you like extra cheese?")
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
 
-  if (isDelivery = true) {
+  if (isDelivery == true) {
     pizza.saleType = "delivery"
     pizza.cost += deliveryFee
   }
