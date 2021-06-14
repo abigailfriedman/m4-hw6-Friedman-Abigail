@@ -6,3 +6,5 @@ Outside resources. I watched a lot on linkedin learning and on youtube about obj
 https://www.w3schools.com/js/js_operators.asp
 https://www.w3schools.com/js/js_if_else.asp
 https://www.geeksforgeeks.org/how-to-get-character-array-from-string-in-javascript/#:~:text=The%20string%20in%20JavaScript%20can,separator%20provided%20in%20the%20argument.
+https://www.w3schools.com/jsref/jsref_length_array.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
